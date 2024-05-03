@@ -129,7 +129,7 @@ const Dashboard = () => {
                 {filterPosts.map((post, i) => {
                     return <Card key={i} post={post} />
                 })}
-                {fetchPosts.length==0 && <h1 style={{textAlign:'center',width:'100%'}}>No Job found</h1>}
+                {fetchPosts.length==0 && loading==false? <h1 style={{textAlign:'center',width:'100%'}}>No Job found</h1>:null}
             </div>
             {loading && <p style={{ textAlign: 'center', margin: '12px' }}>Loading...</p>}
         </div>
