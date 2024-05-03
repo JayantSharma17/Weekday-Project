@@ -5,13 +5,13 @@ const App = () => {
   return (
     <>
       <div className="card-grid">
-      {/* Render multiple Card components */}
       <Card />
       <Card />
       <Card />
       <Card />
       <Card />
-      {/* Add more Card components as needed */}
+      <Card />
+      <Card />
     </div>
     </>
   )
