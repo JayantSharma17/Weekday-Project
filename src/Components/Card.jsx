@@ -30,7 +30,7 @@ const Card = ({post}) => {
                     <button onClick={() => { setShow(!show) }} className='viewMore' style={{ height: '20px', borderRadius: '0.4rem', backgroundColor: 'transparent', border: 'none', color: 'blue' }}>{show?'View more':'View less'}</button>
 
                     <p style={{ color: '#262626', fontSize: '13px', fontWeight: '500', letterSpacing: '1px', whiteSpace: '10px', marginTop: '15px' }}>Minimum  Experience</p>
-                    <p style={{ color: 'black', fontSize: '13px', fontWeight: '700' }}>2 years</p>
+                    <p style={{ color: 'black', fontSize: '13px', fontWeight: '700' }}>{`${post.minExp} years`}</p>
                     <button className='apply' >⚡ Easy Apply</button>
                 </div>
             </div>

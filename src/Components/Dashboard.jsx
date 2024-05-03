@@ -8,6 +8,8 @@ const Dashboard = () => {
     const [page, setPage] = useState(1);
     const [loading, setLoading] = useState(false);
     const [selectedRole, setSelectedRole] = useState('');
+    const [selectExp, setSelectExp] = useState('');
+    const [searchTerm, setSearchTerm] = useState('');
 
 
 
@@ -50,19 +52,34 @@ const Dashboard = () => {
     useEffect(() => {
         fetchPosts();
     }, []);
+    useEffect(() => {
+        const filtered = posts.filter(rep => {
+            return rep.companyName.toLowerCase().includes(searchTerm.toLowerCase());
+        });
+        setFilterPosts(filtered);
+    }, [searchTerm]);
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
     const filterDataRole = (t) => {
-        if(t===""){
+        if (t === "") {
             setFilterPosts(posts)
             return;
         }
-        let res=posts.filter(item => item.jobRole.toLowerCase() === t.toLowerCase());
+        let res = posts.filter(item => item.jobRole.toLowerCase() === t.toLowerCase());
         setFilterPosts(res);
-        console.log(res)        
+        console.log(res)
+    };
+    const filterDataExp = (t) => {
+        if (t === "") {
+            setFilterPosts(posts)
+            return;
+        }
+        let res = posts.filter(item => item.minExp == t.toLowerCase());
+        setFilterPosts(res);
+        console.log(res)
     };
 
     return (
@@ -70,8 +87,8 @@ const Dashboard = () => {
 
 
         <div className="App">
-            <div>
-                <select value={selectedRole} onChange={(e)=>{setSelectedRole(e.target.value); filterDataRole(e.target.value)}} >
+            <div className='toph'>
+                <select value={selectedRole} onChange={(e) => { setSelectedRole(e.target.value); filterDataRole(e.target.value) }} >
                     <option value="">All Roles</option>
                     <option value="Backend">Backend</option>
                     <option value="Frontend">Frontend</option>
@@ -84,7 +101,7 @@ const Dashboard = () => {
                     <option value="Tech Lead">Tech Lead</option>
                 </select>
 
-                <select value={selectExp} onChange={(e)=>{setSelectExp(e.target.value); filterDataRole(e.target.value)}} >
+                <select value={selectExp} onChange={(e) => { setSelectExp(e.target.value); filterDataExp(e.target.value) }} >
                     <option value="">Experience</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -98,12 +115,21 @@ const Dashboard = () => {
                     <option value="10">10</option>
                     <option value="11">11</option>
                 </select>
+                <div className="search">
+                    <input
+                        type="text"
+                        placeholder="Search by Name"
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                    />
+                </div>
             </div>
 
             <div className="card-grid">
                 {filterPosts.map((post, i) => {
                     return <Card key={i} post={post} />
                 })}
+                {fetchPosts.length==0 && <h1 style={{textAlign:'center',width:'100%'}}>No Job found</h1>}
             </div>
             {loading && <p style={{ textAlign: 'center', margin: '12px' }}>Loading...</p>}
         </div>
