@@ -69,6 +69,7 @@
   justify-content: flex-start;
   align-items: flex-start;
   margin-top: 0.8rem;
+  gap: 10px;
 }
 
 #cname #heading{

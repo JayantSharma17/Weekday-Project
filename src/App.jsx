@@ -1,18 +1,12 @@
 import React from 'react'
-import Card from './Components/Card'
+// import Card from './Components/Card'
+import Dashboard from './Components/Dashboard'
 
 const App = () => {
   return (
     <>
-      <div className="card-grid">
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-    </div>
+      <Dashboard />
+
     </>
   )
 }
