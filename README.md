@@ -19,6 +19,8 @@ npm run dev
 4. Access Git-Along
 Open your web browser and navigate to http://localhost:5173 to access the Weekday-Project dashboard.
 
+## Website Link: https://weekdayp.netlify.app/
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
