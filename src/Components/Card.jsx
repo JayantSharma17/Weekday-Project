@@ -26,7 +26,7 @@ const Card = ({post}) => {
                     <h2 style={{ fontSize: '16px', marginTop: '10px', fontWeight: '400' }}>{`Estimated Salary: ₹${post.minJdSalary} - ${post.maxJdSalary} LPA ✅`}</h2>
                     <h1 style={{ fontSize: '18px', fontWeight: '500', marginTop: '20px' }}>About Company:</h1>
                     <p style={{ fontWeight: 'bold' }}>About us</p>
-                    <p style={{ fontSize: '14px', height: show ? '20px' : 'auto' }} id='jd' onClick={() => { console.log('ji') }}>{post.jobDetailsFromCompany}</p>
+                    <p style={{ fontSize: '14px', height: show ? '60px' : 'auto' }} id='jd' onClick={() => { console.log('ji') }}>{post.jobDetailsFromCompany}</p>
                     <button onClick={() => { setShow(!show) }} className='viewMore' style={{ height: '20px', borderRadius: '0.4rem', backgroundColor: 'transparent', border: 'none', color: 'blue' }}>{show?'View more':'View less'}</button>
 
                     <p style={{ color: '#262626', fontSize: '13px', fontWeight: '500', letterSpacing: '1px', whiteSpace: '10px', marginTop: '15px' }}>Minimum  Experience</p>
