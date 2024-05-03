@@ -16,7 +16,9 @@
   flex-direction: column;
   border-radius: 1rem;
   box-shadow: 2px -1px 4px 3px #ede2e2;
-  margin: 2rem;
+  margin: auto;
+  margin-bottom: 3rem;
+  
   
 }
 #post{
@@ -35,6 +37,27 @@
   font-size: small;
 
 }
+#jd{
+  height: 60px;
+  overflow: hidden;
+}
+.viewMore:hover{
+  cursor: pointer;
+}
+.apply{
+  margin-top:15px;
+  height:40px;
+  border-radius:0.4rem;
+  background-color:#55efc4;
+  border:none;
+  font-weight:bold;
+  font-size:15px
+}
+.apply:hover{
+  cursor: pointer;
+  background-color:#057d5b;
+  color: #ffffff;
+}
 #cname{
   display: flex;
   flex-direction: row;
@@ -50,4 +73,43 @@
   align-items: flex-start;
   justify-content: space-between;
   height: 80px;
+}
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three cards per row */
+  gap: 0px; /* Spacing between cards */
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  align-self: center;
+  /* align-items: start; */
+
+}
+
+@media screen and (max-width: 768px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr); /* Two cards per row */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .card-grid {
+    grid-template-columns: 1fr; /* One card per row */
+    width: 100%;
+
+  }
+ 
+  #cardMain{
+    width: 300px;
+    /* height: 500px; */
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    padding: 1rem ;
+    flex-direction: column;
+    border-radius: 1rem;
+    box-shadow: 2px -1px 4px 3px #ede2e2;
+    margin-left: auto;
+    margin-right: auto;
+    
+  }
 }
